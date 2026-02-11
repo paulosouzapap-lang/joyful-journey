@@ -509,7 +509,7 @@ const Index = () => {
                 >
                   <PawPrint className="h-5 w-5" /> WhatsApp
                 </a>
-                <Button variant="outline" className="rounded-full font-bold border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                <Button variant="outline" className="rounded-full font-bold border-white/40 text-white bg-white/10 hover:bg-white/20 hover:text-white">
                   <ChevronRight className="h-5 w-5" /> Como Chegar
                 </Button>
               </div>
