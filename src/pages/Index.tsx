@@ -98,7 +98,7 @@ const Index = () => {
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b">
         <nav className="container mx-auto flex items-center justify-between py-3 px-4">
-          <img src={logo} alt="Unipet Logo" className="h-12 w-auto" />
+          <img src={logo} alt="Unipet Logo" className="h-12 md:h-20 w-auto" />
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-foreground/80">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className="hover:text-primary transition-colors">{link.label}</a>
