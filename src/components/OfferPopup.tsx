@@ -25,8 +25,6 @@ const OfferPopup = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const alreadySeen = sessionStorage.getItem("unipet_offer_seen");
-    if (alreadySeen) return;
     const timer = setTimeout(() => setOpen(true), 5000);
     return () => clearTimeout(timer);
   }, []);
