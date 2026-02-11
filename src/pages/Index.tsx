@@ -19,6 +19,12 @@ import { ptBR } from "date-fns/locale";
 import heroImg from "@/assets/hero-vet.jpg";
 import aboutImg from "@/assets/about-pets.jpg";
 import logo from "@/assets/unipet-logo.png";
+import galleryTeam from "@/assets/gallery-team.jpg";
+import galleryClinic from "@/assets/gallery-clinic.jpg";
+import galleryCat from "@/assets/gallery-cat.jpg";
+import galleryPetshop from "@/assets/gallery-petshop.jpg";
+import galleryVaccine from "@/assets/gallery-vaccine.jpg";
+import galleryReception from "@/assets/gallery-reception.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5500000000000";
 
@@ -71,6 +77,7 @@ const Index = () => {
     { href: "#petshop", label: "Pet Shop" },
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#avaliacoes", label: "Avaliações" },
+    { href: "#galeria", label: "Galeria" },
     { href: "#agendar", label: "Agendar" },
     { href: "#contato", label: "Contato" },
   ];
@@ -323,6 +330,48 @@ const Index = () => {
                     <p className="font-bold text-foreground">— {r.name}</p>
                   </CardContent>
                 </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* GALERIA */}
+      <section id="galeria" className="py-20 bg-warm/30">
+        <div className="container mx-auto px-4">
+          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="text-primary font-bold uppercase tracking-wider text-sm">Galeria</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Nosso Espaço e Equipe 📸</h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              Conheça nossa clínica, equipe e os pets que cuidamos com muito amor.
+            </p>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+          >
+            {[
+              { src: galleryTeam, alt: "Nossa equipe veterinária", label: "Nossa Equipe" },
+              { src: galleryClinic, alt: "Sala de atendimento", label: "Consultório" },
+              { src: galleryCat, alt: "Gatinho sendo examinado", label: "Cuidado Felino" },
+              { src: galleryPetshop, alt: "Pet shop e banho", label: "Pet Shop" },
+              { src: galleryVaccine, alt: "Vacinação de filhote", label: "Vacinação" },
+              { src: galleryReception, alt: "Recepção da clínica", label: "Recepção" },
+            ].map((photo) => (
+              <motion.div
+                key={photo.label}
+                variants={fadeUp}
+                className="group relative overflow-hidden rounded-2xl shadow-md aspect-square"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-primary-foreground font-bold text-sm">{photo.label}</span>
+                </div>
               </motion.div>
             ))}
           </motion.div>
