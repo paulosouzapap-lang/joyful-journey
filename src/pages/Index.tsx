@@ -4,7 +4,7 @@ import {
   Calendar, MessageCircle, Heart, Shield, Stethoscope, Syringe,
   FlaskConical, ClipboardCheck, HeartPulse, Sparkles, ShoppingBag,
   Star, MapPin, Clock, Phone, Instagram, Facebook, PawPrint,
-  ChevronRight, Users, Bone, Package, Scissors, Dog
+  ChevronRight, Users, Bone, Package, Scissors, Dog, Menu, X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,6 +63,18 @@ const reviews = [
 ];
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#sobre", label: "Sobre" },
+    { href: "#servicos", label: "Serviços" },
+    { href: "#petshop", label: "Pet Shop" },
+    { href: "#diferenciais", label: "Diferenciais" },
+    { href: "#avaliacoes", label: "Avaliações" },
+    { href: "#agendar", label: "Agendar" },
+    { href: "#contato", label: "Contato" },
+  ];
+
   const [bookingDate, setBookingDate] = useState<Date>();
   const [formData, setFormData] = useState({
     tutorName: "", petName: "", serviceType: "", time: "", phone: "",
@@ -81,20 +93,53 @@ const Index = () => {
         <nav className="container mx-auto flex items-center justify-between py-3 px-4">
           <img src={logo} alt="Unipet Logo" className="h-12 w-auto" />
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-foreground/80">
-            <a href="#sobre" className="hover:text-primary transition-colors">Sobre</a>
-            <a href="#servicos" className="hover:text-primary transition-colors">Serviços</a>
-            <a href="#petshop" className="hover:text-primary transition-colors">Pet Shop</a>
-            <a href="#diferenciais" className="hover:text-primary transition-colors">Diferenciais</a>
-            <a href="#avaliacoes" className="hover:text-primary transition-colors">Avaliações</a>
-            <a href="#agendar" className="hover:text-primary transition-colors">Agendar</a>
-            <a href="#contato" className="hover:text-primary transition-colors">Contato</a>
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-primary transition-colors">{link.label}</a>
+            ))}
           </div>
-          <Button asChild size="sm" className="rounded-full font-bold">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button asChild size="sm" className="rounded-full font-bold hidden sm:inline-flex">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-4 w-4" /> WhatsApp
+              </a>
+            </Button>
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Abrir menu"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </nav>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-background border-t"
+          >
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground/80 font-semibold py-2 px-3 rounded-lg hover:bg-muted hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <Button asChild size="sm" className="rounded-full font-bold w-full mt-2">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" /> Falar no WhatsApp
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+        )}
       </header>
 
       {/* HERO */}
