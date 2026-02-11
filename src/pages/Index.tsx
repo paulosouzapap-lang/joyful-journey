@@ -105,11 +105,14 @@ const Index = () => {
             ))}
           </div>
           <div className="flex items-center gap-2">
-            <Button asChild size="sm" className="rounded-full font-bold hidden sm:inline-flex">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
-            </Button>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full px-4 py-2 text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              <PawPrint className="h-4 w-4" /> WhatsApp
+            </a>
             <button
               className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -139,11 +142,14 @@ const Index = () => {
                   {link.label}
                 </a>
               ))}
-              <Button asChild size="sm" className="rounded-full font-bold w-full mt-2">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" /> Falar no WhatsApp
-                </a>
-              </Button>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full px-5 py-3 text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 w-full mt-2"
+              >
+                <PawPrint className="h-4 w-4" /> Falar no WhatsApp
+              </a>
             </div>
           </motion.div>
         )}
@@ -169,11 +175,14 @@ const Index = () => {
             <Button asChild size="lg" className="rounded-full text-base font-bold shadow-lg">
               <a href="#agendar"><Calendar className="h-5 w-5" /> Agendar Consulta</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full text-base font-bold bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-5 w-5" /> Falar no WhatsApp
-              </a>
-            </Button>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full px-8 py-3 text-base font-bold shadow-[0_8px_30px_rgba(34,197,94,0.45)] hover:shadow-[0_12px_40px_rgba(34,197,94,0.55)] hover:scale-105 transition-all duration-300"
+            >
+              <PawPrint className="h-5 w-5" /> Falar no WhatsApp
+            </a>
           </motion.div>
         </motion.div>
       </section>
@@ -492,11 +501,14 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex gap-3 pt-2">
-                <Button asChild className="rounded-full font-bold">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="h-5 w-5" /> WhatsApp
-                  </a>
-                </Button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full px-6 py-3 font-bold shadow-[0_8px_30px_rgba(34,197,94,0.45)] hover:shadow-[0_12px_40px_rgba(34,197,94,0.55)] hover:scale-105 transition-all duration-300"
+                >
+                  <PawPrint className="h-5 w-5" /> WhatsApp
+                </a>
                 <Button variant="outline" className="rounded-full font-bold border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                   <ChevronRight className="h-5 w-5" /> Como Chegar
                 </Button>
