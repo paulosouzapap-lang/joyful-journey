@@ -546,10 +546,13 @@ const Index = () => {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-transform hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-transform hover:scale-110 group"
         aria-label="Falar no WhatsApp"
       >
-        <MessageCircle className="h-7 w-7" />
+        <div className="relative">
+          <MessageCircle className="h-7 w-7" />
+          <PawPrint className="h-3.5 w-3.5 absolute -top-1 -right-1 text-white drop-shadow-md group-hover:animate-bounce" />
+        </div>
       </a>
     </div>
   );
