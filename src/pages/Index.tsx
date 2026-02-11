@@ -16,6 +16,7 @@ import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import OfferPopup from "@/components/OfferPopup";
 import heroImg from "@/assets/hero-vet.jpg";
 import aboutImg from "@/assets/about-pets.jpg";
 import logo from "@/assets/unipet-logo.png";
@@ -95,6 +96,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <OfferPopup />
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b">
         <nav className="container mx-auto flex items-center justify-between py-3 px-4">
