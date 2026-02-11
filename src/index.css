@@ -107,7 +107,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* --- REMOVER MARCA DO LOVABLE --- */
+/* Remoção do Badge Lovable */
 a[href*="lovable.dev"], 
 iframe[src*="lovable.dev"], 
 div[style*="Edit with Lovable"], 
