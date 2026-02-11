@@ -22,6 +22,9 @@ export default defineConfig(({ mode }) => ({
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp}"],
         navigateFallbackDenylist: [/^\/~oauth/],
+        // --- ADICIONADO PARA CORRIGIR O ERRO NA VERCEL ---
+        maximumFileSizeToCacheInBytes: 10000000, 
+        // -----------------------------------------------
       },
       manifest: {
         name: "Unipet — Clínica Veterinária e Pet Shop",
