@@ -542,18 +542,24 @@ const Index = () => {
       </footer>
 
       {/* WHATSAPP FLUTUANTE */}
-      <a
+      <motion.a
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-transform hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full pl-5 pr-6 py-3.5 shadow-[0_8px_30px_rgba(34,197,94,0.45)] group cursor-pointer"
         aria-label="Falar no WhatsApp"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1, type: "spring", stiffness: 200 }}
+        whileHover={{ scale: 1.08, boxShadow: "0 12px 40px rgba(34,197,94,0.55)" }}
+        whileTap={{ scale: 0.95 }}
       >
-        <div className="relative">
-          <MessageCircle className="h-7 w-7" />
-          <PawPrint className="h-3.5 w-3.5 absolute -top-1 -right-1 text-white drop-shadow-md group-hover:animate-bounce" />
-        </div>
-      </a>
+        <span className="relative">
+          <PawPrint className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+        </span>
+        <span className="text-sm font-bold tracking-wide hidden sm:inline">Fale Conosco</span>
+        <MessageCircle className="h-5 w-5 sm:hidden" />
+      </motion.a>
     </div>
   );
 };
