@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, PawPrint, Gift, Phone } from "lucide-react";
+import { X, PawPrint, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logo from "@/assets/unipet-logo.png";
 
 const formatPhone = (value: string) => {
   const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -91,13 +92,13 @@ const OfferPopup = () => {
             </button>
 
             <div className="p-6 pt-8 text-center space-y-4">
-              {/* Icon */}
+              {/* Logo */}
               <motion.div
-                className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"
-                animate={{ rotate: [0, -8, 8, -4, 0] }}
+                className="mx-auto w-20 h-20 flex items-center justify-center"
+                animate={{ rotate: [0, -4, 4, -2, 0] }}
                 transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
               >
-                <Gift className="h-8 w-8 text-primary" />
+                <img src={logo} alt="Unipet Logo" className="w-full h-full object-contain" />
               </motion.div>
 
               {/* Title */}
