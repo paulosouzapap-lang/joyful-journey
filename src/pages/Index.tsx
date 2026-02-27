@@ -250,7 +250,10 @@ const Index = () => {
           >
             {services.map((s) => (
               <motion.div key={s.title} variants={fadeUp}>
-                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm">
+                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm overflow-hidden">
+                  {s.img && (
+                    <img src={s.img} alt={s.title} className="w-full h-40 object-cover" />
+                  )}
                   <CardContent className="p-6 flex gap-4 items-start">
                     <div className="rounded-xl bg-primary/10 p-3 shrink-0">
                       <s.icon className="h-6 w-6 text-primary" />
