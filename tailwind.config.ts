@@ -59,6 +59,12 @@ export default {
             DEFAULT: "hsl(var(--warm))",
             foreground: "hsl(var(--warm-foreground))",
           },
+          whatsapp: {
+            DEFAULT: "hsl(var(--whatsapp))",
+            light: "hsl(var(--whatsapp-light))",
+            foreground: "hsl(var(--whatsapp-foreground))",
+          },
+          star: "hsl(var(--star))",
           sidebar: {
             DEFAULT: "hsl(var(--sidebar-background))",
             foreground: "hsl(var(--sidebar-foreground))",
