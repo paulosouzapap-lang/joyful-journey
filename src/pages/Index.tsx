@@ -545,7 +545,7 @@ const Index = () => {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-20 bg-foreground text-primary-foreground">
+      <section id="contato" aria-label="Informações de contato e localização da Unipet" className="py-20 bg-foreground text-primary-foreground">
         <div className="container mx-auto px-4">
           <motion.div
             className="grid md:grid-cols-2 gap-12 items-center"
