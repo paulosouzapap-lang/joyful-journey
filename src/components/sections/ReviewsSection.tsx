@@ -20,7 +20,7 @@ const ReviewsSection = () => (
               <CardContent className="p-6 space-y-4">
                 <div className="flex gap-0.5 text-accent">
                   {Array.from({ length: r.stars }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="h-5 w-5 fill-star text-star" />
                   ))}
                 </div>
                 <p className="text-muted-foreground italic">"{r.text}"</p>

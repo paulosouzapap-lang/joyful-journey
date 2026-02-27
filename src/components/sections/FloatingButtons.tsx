@@ -19,12 +19,12 @@ const FloatingButtons = () => {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full pl-5 pr-6 py-3.5 shadow-[0_8px_30px_rgba(34,197,94,0.45)] group cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-br from-whatsapp-light to-whatsapp text-whatsapp-foreground rounded-full pl-5 pr-6 py-3.5 shadow-[0_8px_30px_hsl(var(--whatsapp)/0.45)] group cursor-pointer"
         aria-label="Falar no WhatsApp"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.08, boxShadow: "0 12px 40px rgba(34,197,94,0.55)" }}
+        whileHover={{ scale: 1.08, boxShadow: "0 12px 40px hsl(142 71% 45% / 0.55)" }}
         whileTap={{ scale: 0.95 }}
       >
         <span className="relative">
