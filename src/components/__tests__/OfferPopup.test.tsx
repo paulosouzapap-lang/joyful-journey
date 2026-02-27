@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import React from "react";
 
 // Helper to filter framer-motion props from DOM elements
@@ -34,19 +34,27 @@ describe("OfferPopup", () => {
     sessionStorage.clear();
   });
 
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it("renders after 5 second delay", async () => {
     const { default: OfferPopup } = await import("../OfferPopup");
     render(<OfferPopup />);
     expect(screen.queryByText("Oferta Especial 🐾")).not.toBeInTheDocument();
 
-    vi.advanceTimersByTime(5000);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
     expect(screen.getByText("Oferta Especial 🐾")).toBeInTheDocument();
   });
 
   it("shows validation error for invalid phone", async () => {
     const { default: OfferPopup } = await import("../OfferPopup");
     render(<OfferPopup />);
-    vi.advanceTimersByTime(5000);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
 
     const input = screen.getByPlaceholderText("(00) 00000-0000");
     fireEvent.change(input, { target: { value: "123" } });
@@ -58,7 +66,9 @@ describe("OfferPopup", () => {
   it("formats phone number correctly", async () => {
     const { default: OfferPopup } = await import("../OfferPopup");
     render(<OfferPopup />);
-    vi.advanceTimersByTime(5000);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
 
     const input = screen.getByPlaceholderText("(00) 00000-0000") as HTMLInputElement;
     fireEvent.change(input, { target: { value: "11999887766" } });
@@ -68,7 +78,9 @@ describe("OfferPopup", () => {
   it("closes when close button is clicked", async () => {
     const { default: OfferPopup } = await import("../OfferPopup");
     render(<OfferPopup />);
-    vi.advanceTimersByTime(5000);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
     expect(screen.getByText("Oferta Especial 🐾")).toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText("Fechar"));
@@ -79,7 +91,9 @@ describe("OfferPopup", () => {
     const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
     const { default: OfferPopup } = await import("../OfferPopup");
     render(<OfferPopup />);
-    vi.advanceTimersByTime(5000);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
 
     const input = screen.getByPlaceholderText("(00) 00000-0000");
     fireEvent.change(input, { target: { value: "11999887766" } });

@@ -61,16 +61,16 @@ describe("Index Page", () => {
 
   it("renders navigation links", async () => {
     await renderIndex();
-    expect(screen.getByText("Sobre")).toBeInTheDocument();
-    expect(screen.getByText("Serviços")).toBeInTheDocument();
-    expect(screen.getByText("Contato")).toBeInTheDocument();
+    expect(screen.getAllByText("Sobre").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Serviços").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Contato").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders all service cards", async () => {
     await renderIndex();
-    expect(screen.getByText("Consultas Veterinárias")).toBeInTheDocument();
-    expect(screen.getByText("Vacinação")).toBeInTheDocument();
-    expect(screen.getByText("Exames Laboratoriais")).toBeInTheDocument();
+    expect(screen.getAllByText("Consultas Veterinárias").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Vacinação").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Exames Laboratoriais").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders testimonials", async () => {
