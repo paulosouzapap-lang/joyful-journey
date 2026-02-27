@@ -5,7 +5,8 @@ import {
   Calendar, MessageCircle, Heart, Shield, Stethoscope, Syringe,
   FlaskConical, ClipboardCheck, HeartPulse, Sparkles, ShoppingBag,
   Star, MapPin, Clock, Phone, Instagram, Facebook, PawPrint,
-  ChevronRight, Users, Bone, Package, Scissors, Dog, Menu, X
+  ChevronRight, Users, Bone, Package, Scissors, Dog, Menu, X,
+  HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
