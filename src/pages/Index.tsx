@@ -600,8 +600,10 @@ const Index = () => {
         </div>
       </section>
 
+      </main>
+
       {/* RODAPÉ */}
-      <footer className="bg-foreground border-t border-primary-foreground/10 py-8">
+      <footer className="bg-foreground border-t border-primary-foreground/10 py-8" role="contentinfo">
         <div className="container mx-auto px-4 text-center space-y-4">
           <img src={logo} alt="Unipet" className="h-10 mx-auto brightness-200" />
           <div className="flex justify-center gap-4">
