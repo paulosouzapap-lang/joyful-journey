@@ -27,6 +27,10 @@ import galleryCat from "@/assets/gallery-cat.jpg";
 import galleryPetshop from "@/assets/gallery-petshop.jpg";
 import galleryVaccine from "@/assets/gallery-vaccine.jpg";
 import galleryReception from "@/assets/gallery-reception.jpg";
+import servicesConsultation from "@/assets/services-consultation.jpg";
+import aboutClinicPets from "@/assets/about-clinic-pets.jpg";
+import servicesVaccine from "@/assets/services-vaccine.jpg";
+import servicesLab from "@/assets/services-lab.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5500000000000";
 
