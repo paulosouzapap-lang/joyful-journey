@@ -287,7 +287,7 @@ const Index = () => {
       </section>
 
       {/* PET SHOP */}
-      <section id="petshop" className="py-20 bg-mint/30">
+      <section id="petshop" aria-label="Pet Shop Unipet - Produtos para animais" className="py-20 bg-mint/30">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-secondary-foreground font-bold uppercase tracking-wider text-sm">Pet Shop</span>
