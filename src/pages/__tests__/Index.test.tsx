@@ -1,35 +1,30 @@
-// @ts-nocheck
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import React from "react";
 
 // Mock framer-motion
 vi.mock("framer-motion", () => ({
   motion: new Proxy({}, {
-    get: (_target, prop) => {
-      return ({ children, ...props }: any) => {
-        const Tag = typeof prop === "string" ? prop : "div";
+    get: (_target: object, prop: string | symbol) => {
+      return ({ children, ...props }: React.PropsWithChildren<Record<string, unknown>>) => {
+        const Tag = (typeof prop === "string" ? prop : "div") as keyof React.JSX.IntrinsicElements;
         const filtered = { ...props };
-        for (const key of ["initial", "animate", "exit", "transition", "whileHover", "whileTap", "whileInView", "variants", "viewport"]) {
+        const motionKeys = ["initial", "animate", "exit", "transition", "whileHover", "whileTap", "whileInView", "variants", "viewport"];
+        for (const key of motionKeys) {
           delete filtered[key];
         }
-        // Filter out non-DOM props
-        const domProps: any = {};
-        for (const [k, v] of Object.entries(filtered)) {
-          if (!k.startsWith("on") || typeof v === "function") {
-            domProps[k] = v;
-          }
-        }
-        return <Tag {...domProps}>{children}</Tag>;
+        return React.createElement(Tag, filtered, children);
       };
     },
-  }) as any,
-  AnimatePresence: ({ children }: any) => <>{children}</>,
+  }),
+  AnimatePresence: ({ children }: React.PropsWithChildren) => <>{children}</>,
 }));
 
 // Mock image imports
 vi.mock("@/assets/hero-vet.jpg", () => ({ default: "hero.jpg" }));
 vi.mock("@/assets/about-pets.jpg", () => ({ default: "about.jpg" }));
+vi.mock("@/assets/about-clinic-pets.jpg", () => ({ default: "about-clinic.jpg" }));
 vi.mock("@/assets/unipet-logo.png", () => ({ default: "logo.png" }));
 vi.mock("@/assets/gallery-team.jpg", () => ({ default: "team.jpg" }));
 vi.mock("@/assets/gallery-clinic.jpg", () => ({ default: "clinic.jpg" }));
@@ -37,6 +32,12 @@ vi.mock("@/assets/gallery-cat.jpg", () => ({ default: "cat.jpg" }));
 vi.mock("@/assets/gallery-petshop.jpg", () => ({ default: "petshop.jpg" }));
 vi.mock("@/assets/gallery-vaccine.jpg", () => ({ default: "vaccine.jpg" }));
 vi.mock("@/assets/gallery-reception.jpg", () => ({ default: "reception.jpg" }));
+vi.mock("@/assets/services-consultation.jpg", () => ({ default: "consultation.jpg" }));
+vi.mock("@/assets/services-vaccine.jpg", () => ({ default: "vaccine-s.jpg" }));
+vi.mock("@/assets/services-lab.jpg", () => ({ default: "lab.jpg" }));
+vi.mock("@/assets/services-checkup.jpg", () => ({ default: "checkup.jpg" }));
+vi.mock("@/assets/services-clinical.jpg", () => ({ default: "clinical.jpg" }));
+vi.mock("@/assets/services-guidance.jpg", () => ({ default: "guidance.jpg" }));
 
 // Mock OfferPopup
 vi.mock("@/components/OfferPopup", () => ({
@@ -80,7 +81,7 @@ describe("Index Page", () => {
 
   it("renders the booking form section", async () => {
     await renderIndex();
-    expect(screen.getByText(/Agende sua Consulta/)).toBeInTheDocument();
+    expect(screen.getByText(/Agende Online/)).toBeInTheDocument();
   });
 
   it("renders the OfferPopup", async () => {

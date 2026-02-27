@@ -3,19 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, PawPrint, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { formatPhone, isValidPhone } from "@/lib/phone";
 import logo from "@/assets/unipet-logo.png";
-
-const formatPhone = (value: string) => {
-  const digits = value.replace(/\D/g, "").slice(0, 11);
-  if (digits.length <= 2) return `(${digits}`;
-  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
-};
-
-const isValidPhone = (value: string) => {
-  const digits = value.replace(/\D/g, "");
-  return digits.length >= 10 && digits.length <= 11;
-};
 
 const WHATSAPP_URL = "https://wa.me/5500000000000";
 
