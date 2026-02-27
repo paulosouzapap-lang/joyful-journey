@@ -43,6 +43,11 @@
     --warm: 30 60% 95%;
     --warm-foreground: 30 40% 30%;
 
+    --whatsapp: 142 71% 45%;
+    --whatsapp-light: 142 69% 58%;
+    --whatsapp-foreground: 0 0% 100%;
+    --star: 45 93% 58%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
