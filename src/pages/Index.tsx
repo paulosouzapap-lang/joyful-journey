@@ -375,7 +375,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-muted/40">
+      <section id="faq" aria-label="Perguntas frequentes sobre a clínica veterinária" className="py-20 bg-muted/40">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Dúvidas</span>
