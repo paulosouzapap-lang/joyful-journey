@@ -44,12 +44,12 @@ const stagger = {
 };
 
 const services = [
-  { icon: Stethoscope, title: "Consultas Veterinárias", desc: "Atendimento completo e cuidadoso para a saúde do seu pet." },
-  { icon: Syringe, title: "Vacinação", desc: "Protocolo vacinal atualizado para proteção total." },
-  { icon: FlaskConical, title: "Exames Laboratoriais", desc: "Diagnósticos precisos com tecnologia de ponta." },
-  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro." },
-  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação." },
-  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal." },
+  { icon: Stethoscope, title: "Consultas Veterinárias", desc: "Atendimento completo e cuidadoso para a saúde do seu pet.", img: servicesConsultation },
+  { icon: Syringe, title: "Vacinação", desc: "Protocolo vacinal atualizado para proteção total.", img: servicesVaccine },
+  { icon: FlaskConical, title: "Exames Laboratoriais", desc: "Diagnósticos precisos com tecnologia de ponta.", img: servicesLab },
+  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro.", img: null },
+  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação.", img: null },
+  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal.", img: null },
 ];
 
 const petShopItems = [
