@@ -96,6 +96,7 @@ const Index = () => {
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#avaliacoes", label: "Avaliações" },
     { href: "#galeria", label: "Galeria" },
+    { href: "#faq", label: "FAQ" },
     { href: "#agendar", label: "Agendar" },
     { href: "#contato", label: "Contato" },
   ];
