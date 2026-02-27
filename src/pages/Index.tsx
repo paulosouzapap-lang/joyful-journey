@@ -456,7 +456,7 @@ const Index = () => {
       </section>
 
       {/* AGENDAMENTO */}
-      <section id="agendar" className="py-20 bg-primary/5">
+      <section id="agendar" aria-label="Formulário de agendamento de consulta veterinária online" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Agendamento</span>
