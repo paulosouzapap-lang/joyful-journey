@@ -322,7 +322,7 @@ const Index = () => {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section id="diferenciais" className="py-20 bg-lavender/30">
+      <section id="diferenciais" aria-label="Diferenciais da clínica veterinária Unipet" className="py-20 bg-lavender/30">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-accent font-bold uppercase tracking-wider text-sm">Diferenciais</span>
