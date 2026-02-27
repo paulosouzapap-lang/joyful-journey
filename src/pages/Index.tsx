@@ -27,6 +27,10 @@ import galleryCat from "@/assets/gallery-cat.jpg";
 import galleryPetshop from "@/assets/gallery-petshop.jpg";
 import galleryVaccine from "@/assets/gallery-vaccine.jpg";
 import galleryReception from "@/assets/gallery-reception.jpg";
+import servicesConsultation from "@/assets/services-consultation.jpg";
+import aboutClinicPets from "@/assets/about-clinic-pets.jpg";
+import servicesVaccine from "@/assets/services-vaccine.jpg";
+import servicesLab from "@/assets/services-lab.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5500000000000";
 
@@ -40,12 +44,12 @@ const stagger = {
 };
 
 const services = [
-  { icon: Stethoscope, title: "Consultas Veterinárias", desc: "Atendimento completo e cuidadoso para a saúde do seu pet." },
-  { icon: Syringe, title: "Vacinação", desc: "Protocolo vacinal atualizado para proteção total." },
-  { icon: FlaskConical, title: "Exames Laboratoriais", desc: "Diagnósticos precisos com tecnologia de ponta." },
-  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro." },
-  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação." },
-  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal." },
+  { icon: Stethoscope, title: "Consultas Veterinárias", desc: "Atendimento completo e cuidadoso para a saúde do seu pet.", img: servicesConsultation },
+  { icon: Syringe, title: "Vacinação", desc: "Protocolo vacinal atualizado para proteção total.", img: servicesVaccine },
+  { icon: FlaskConical, title: "Exames Laboratoriais", desc: "Diagnósticos precisos com tecnologia de ponta.", img: servicesLab },
+  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro.", img: null },
+  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação.", img: null },
+  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal.", img: null },
 ];
 
 const petShopItems = [
@@ -204,8 +208,9 @@ const Index = () => {
             className="grid md:grid-cols-2 gap-12 items-center"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           >
-            <motion.div variants={fadeUp}>
+            <motion.div variants={fadeUp} className="space-y-4">
               <img src={aboutImg} alt="Pets na clínica" className="rounded-2xl shadow-xl w-full max-w-md mx-auto" />
+              <img src={aboutClinicPets} alt="Pets acolhidos na recepção" className="rounded-2xl shadow-lg w-full max-w-md mx-auto" />
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-5">
               <span className="text-primary font-bold uppercase tracking-wider text-sm">Sobre a Unipet</span>
@@ -245,7 +250,10 @@ const Index = () => {
           >
             {services.map((s) => (
               <motion.div key={s.title} variants={fadeUp}>
-                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm">
+                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm overflow-hidden">
+                  {s.img && (
+                    <img src={s.img} alt={s.title} className="w-full h-40 object-cover" />
+                  )}
                   <CardContent className="p-6 flex gap-4 items-start">
                     <div className="rounded-xl bg-primary/10 p-3 shrink-0">
                       <s.icon className="h-6 w-6 text-primary" />
