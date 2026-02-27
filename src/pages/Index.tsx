@@ -115,6 +115,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <OfferPopup />
+      {/* Skip to content for accessibility */}
+      <a href="#sobre" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md">
+        Pular para o conteúdo
+      </a>
       {/* NAVBAR */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b">
         <nav className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -175,8 +179,9 @@ const Index = () => {
         )}
       </header>
 
+      <main>
       {/* HERO */}
-      <section className="relative pt-20 min-h-[90vh] flex items-center">
+      <section aria-label="Banner principal da Unipet" className="relative pt-20 min-h-[90vh] flex items-center">
         <div className="absolute inset-0 pt-20">
           <img src={heroImg} alt="Veterinária cuidando de cachorro" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
@@ -208,15 +213,15 @@ const Index = () => {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="py-20 bg-muted/40">
+      <section id="sobre" aria-label="Sobre a Unipet - Clínica Veterinária" className="py-20 bg-muted/40">
         <div className="container mx-auto px-4">
           <motion.div
             className="grid md:grid-cols-2 gap-12 items-center"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           >
             <motion.div variants={fadeUp} className="space-y-4">
-              <img src={aboutImg} alt="Pets na clínica" className="rounded-2xl shadow-xl w-full max-w-md mx-auto" />
-              <img src={aboutClinicPets} alt="Pets acolhidos na recepção" className="rounded-2xl shadow-lg w-full max-w-md mx-auto" />
+              <img src={aboutImg} alt="Cães e gatos sendo atendidos na clínica veterinária Unipet com carinho" className="rounded-2xl shadow-xl w-full max-w-md mx-auto" />
+              <img src={aboutClinicPets} alt="Gato, cachorro e filhote acolhidos na recepção da clínica veterinária" className="rounded-2xl shadow-lg w-full max-w-md mx-auto" />
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-5">
               <span className="text-primary font-bold uppercase tracking-wider text-sm">Sobre a Unipet</span>
@@ -241,7 +246,7 @@ const Index = () => {
       </section>
 
       {/* SERVIÇOS */}
-      <section id="servicos" className="py-20">
+      <section id="servicos" aria-label="Serviços veterinários oferecidos pela Unipet" className="py-20">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Serviços</span>
@@ -256,9 +261,9 @@ const Index = () => {
           >
             {services.map((s) => (
               <motion.div key={s.title} variants={fadeUp}>
-                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm overflow-hidden">
+                <Card className="h-full hover:shadow-lg transition-shadow border-0 bg-card shadow-sm overflow-hidden" role="article">
                   {s.img && (
-                    <img src={s.img} alt={s.title} className="w-full h-40 object-cover" />
+                    <img src={s.img} alt={`Serviço de ${s.title} na clínica veterinária Unipet`} className="w-full h-40 object-cover" loading="lazy" />
                   )}
                   <CardContent className="p-6 flex gap-4 items-start">
                     <div className="rounded-xl bg-primary/10 p-3 shrink-0">
@@ -282,7 +287,7 @@ const Index = () => {
       </section>
 
       {/* PET SHOP */}
-      <section id="petshop" className="py-20 bg-mint/30">
+      <section id="petshop" aria-label="Pet Shop Unipet - Produtos para animais" className="py-20 bg-mint/30">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-secondary-foreground font-bold uppercase tracking-wider text-sm">Pet Shop</span>
@@ -317,7 +322,7 @@ const Index = () => {
       </section>
 
       {/* DIFERENCIAIS */}
-      <section id="diferenciais" className="py-20 bg-lavender/30">
+      <section id="diferenciais" aria-label="Diferenciais da clínica veterinária Unipet" className="py-20 bg-lavender/30">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-accent font-bold uppercase tracking-wider text-sm">Diferenciais</span>
@@ -340,7 +345,7 @@ const Index = () => {
       </section>
 
       {/* AVALIAÇÕES */}
-      <section id="avaliacoes" className="py-20">
+      <section id="avaliacoes" aria-label="Avaliações e depoimentos de clientes da Unipet" className="py-20">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Avaliações</span>
@@ -370,7 +375,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-muted/40">
+      <section id="faq" aria-label="Perguntas frequentes sobre a clínica veterinária" className="py-20 bg-muted/40">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Dúvidas</span>
@@ -409,7 +414,7 @@ const Index = () => {
         </div>
       </section>
       {/* GALERIA */}
-      <section id="galeria" className="py-20 bg-warm/30">
+      <section id="galeria" aria-label="Galeria de fotos da clínica e equipe Unipet" className="py-20 bg-warm/30">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Galeria</span>
@@ -423,12 +428,12 @@ const Index = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           >
             {[
-              { src: galleryTeam, alt: "Nossa equipe veterinária", label: "Nossa Equipe" },
-              { src: galleryClinic, alt: "Sala de atendimento", label: "Consultório" },
-              { src: galleryCat, alt: "Gatinho sendo examinado", label: "Cuidado Felino" },
-              { src: galleryPetshop, alt: "Pet shop e banho", label: "Pet Shop" },
-              { src: galleryVaccine, alt: "Vacinação de filhote", label: "Vacinação" },
-              { src: galleryReception, alt: "Recepção da clínica", label: "Recepção" },
+              { src: galleryTeam, alt: "Equipe de veterinários e auxiliares da clínica Unipet", label: "Nossa Equipe" },
+              { src: galleryClinic, alt: "Sala de consulta e atendimento veterinário moderna e equipada", label: "Consultório" },
+              { src: galleryCat, alt: "Gato sendo examinado com cuidado por veterinária especializada", label: "Cuidado Felino" },
+              { src: galleryPetshop, alt: "Pet shop com produtos de higiene, rações e acessórios para animais", label: "Pet Shop" },
+              { src: galleryVaccine, alt: "Filhote de cachorro recebendo vacinação com protocolo atualizado", label: "Vacinação" },
+              { src: galleryReception, alt: "Recepção acolhedora da clínica veterinária Unipet", label: "Recepção" },
             ].map((photo) => (
               <motion.div
                 key={photo.label}
@@ -451,7 +456,7 @@ const Index = () => {
       </section>
 
       {/* AGENDAMENTO */}
-      <section id="agendar" className="py-20 bg-primary/5">
+      <section id="agendar" aria-label="Formulário de agendamento de consulta veterinária online" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-primary font-bold uppercase tracking-wider text-sm">Agendamento</span>
@@ -540,7 +545,7 @@ const Index = () => {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-20 bg-foreground text-primary-foreground">
+      <section id="contato" aria-label="Informações de contato e localização da Unipet" className="py-20 bg-foreground text-primary-foreground">
         <div className="container mx-auto px-4">
           <motion.div
             className="grid md:grid-cols-2 gap-12 items-center"
@@ -595,8 +600,10 @@ const Index = () => {
         </div>
       </section>
 
+      </main>
+
       {/* RODAPÉ */}
-      <footer className="bg-foreground border-t border-primary-foreground/10 py-8">
+      <footer className="bg-foreground border-t border-primary-foreground/10 py-8" role="contentinfo">
         <div className="container mx-auto px-4 text-center space-y-4">
           <img src={logo} alt="Unipet" className="h-10 mx-auto brightness-200" />
           <div className="flex justify-center gap-4">
