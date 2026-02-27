@@ -208,8 +208,9 @@ const Index = () => {
             className="grid md:grid-cols-2 gap-12 items-center"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           >
-            <motion.div variants={fadeUp}>
+            <motion.div variants={fadeUp} className="space-y-4">
               <img src={aboutImg} alt="Pets na clínica" className="rounded-2xl shadow-xl w-full max-w-md mx-auto" />
+              <img src={aboutClinicPets} alt="Pets acolhidos na recepção" className="rounded-2xl shadow-lg w-full max-w-md mx-auto" />
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-5">
               <span className="text-primary font-bold uppercase tracking-wider text-sm">Sobre a Unipet</span>
