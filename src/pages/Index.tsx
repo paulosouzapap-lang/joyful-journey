@@ -179,8 +179,9 @@ const Index = () => {
         )}
       </header>
 
+      <main>
       {/* HERO */}
-      <section className="relative pt-20 min-h-[90vh] flex items-center">
+      <section aria-label="Banner principal da Unipet" className="relative pt-20 min-h-[90vh] flex items-center">
         <div className="absolute inset-0 pt-20">
           <img src={heroImg} alt="Veterinária cuidando de cachorro" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
