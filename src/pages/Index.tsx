@@ -5,13 +5,15 @@ import {
   Calendar, MessageCircle, Heart, Shield, Stethoscope, Syringe,
   FlaskConical, ClipboardCheck, HeartPulse, Sparkles, ShoppingBag,
   Star, MapPin, Clock, Phone, Instagram, Facebook, PawPrint,
-  ChevronRight, Users, Bone, Package, Scissors, Dog, Menu, X
+  ChevronRight, Users, Bone, Package, Scissors, Dog, Menu, X,
+  HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
@@ -94,6 +96,7 @@ const Index = () => {
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#avaliacoes", label: "Avaliações" },
     { href: "#galeria", label: "Galeria" },
+    { href: "#faq", label: "FAQ" },
     { href: "#agendar", label: "Agendar" },
     { href: "#contato", label: "Contato" },
   ];
@@ -366,6 +369,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="text-primary font-bold uppercase tracking-wider text-sm">Dúvidas</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Perguntas Frequentes ❓</h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              Tire suas principais dúvidas sobre nossos serviços e atendimento.
+            </p>
+          </motion.div>
+          <motion.div
+            className="max-w-2xl mx-auto"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          >
+            <Accordion type="single" collapsible className="space-y-3">
+              {[
+                { q: "Preciso agendar para ser atendido?", a: "Sim! Trabalhamos com agendamento para garantir um atendimento organizado, sem longas esperas, e com toda a atenção que seu pet merece. Agende pelo WhatsApp ou pelo formulário do site." },
+                { q: "Quais animais vocês atendem?", a: "Atendemos cães e gatos de todas as raças e idades, desde filhotes até idosos, sempre com carinho e dedicação." },
+                { q: "Vocês atendem emergências?", a: "Nosso foco é o atendimento agendado para consultas, check-ups e vacinação. Em caso de emergência, entre em contato pelo WhatsApp para orientações e encaminhamento." },
+                { q: "Quais formas de pagamento são aceitas?", a: "Aceitamos dinheiro, Pix, cartões de débito e crédito. Consulte condições especiais de parcelamento na recepção." },
+                { q: "O pet shop tem entrega?", a: "No momento, nossos produtos estão disponíveis apenas na loja física. Venha nos visitar e aproveite para conhecer nosso espaço!" },
+                { q: "A clínica é um ambiente seguro para todos?", a: "Sim! A Unipet é um espaço inclusivo, acolhedor e seguro para todos os tutores e pets. Valorizamos o respeito, a diversidade e tratamos cada pessoa e animal com carinho." },
+              ].map((item, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border-0 shadow-sm px-6">
+                  <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5 gap-4">
+                    <span className="flex items-center gap-3">
+                      <HelpCircle className="h-5 w-5 text-primary shrink-0" />
+                      {item.q}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5 pl-8">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
       {/* GALERIA */}
       <section id="galeria" className="py-20 bg-warm/30">
         <div className="container mx-auto px-4">
