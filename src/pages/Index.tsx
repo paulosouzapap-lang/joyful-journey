@@ -213,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="py-20 bg-muted/40">
+      <section id="sobre" aria-label="Sobre a Unipet - Clínica Veterinária" className="py-20 bg-muted/40">
         <div className="container mx-auto px-4">
           <motion.div
             className="grid md:grid-cols-2 gap-12 items-center"
