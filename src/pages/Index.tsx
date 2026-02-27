@@ -428,12 +428,12 @@ const Index = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
           >
             {[
-              { src: galleryTeam, alt: "Nossa equipe veterinária", label: "Nossa Equipe" },
-              { src: galleryClinic, alt: "Sala de atendimento", label: "Consultório" },
-              { src: galleryCat, alt: "Gatinho sendo examinado", label: "Cuidado Felino" },
-              { src: galleryPetshop, alt: "Pet shop e banho", label: "Pet Shop" },
-              { src: galleryVaccine, alt: "Vacinação de filhote", label: "Vacinação" },
-              { src: galleryReception, alt: "Recepção da clínica", label: "Recepção" },
+              { src: galleryTeam, alt: "Equipe de veterinários e auxiliares da clínica Unipet", label: "Nossa Equipe" },
+              { src: galleryClinic, alt: "Sala de consulta e atendimento veterinário moderna e equipada", label: "Consultório" },
+              { src: galleryCat, alt: "Gato sendo examinado com cuidado por veterinária especializada", label: "Cuidado Felino" },
+              { src: galleryPetshop, alt: "Pet shop com produtos de higiene, rações e acessórios para animais", label: "Pet Shop" },
+              { src: galleryVaccine, alt: "Filhote de cachorro recebendo vacinação com protocolo atualizado", label: "Vacinação" },
+              { src: galleryReception, alt: "Recepção acolhedora da clínica veterinária Unipet", label: "Recepção" },
             ].map((photo) => (
               <motion.div
                 key={photo.label}
