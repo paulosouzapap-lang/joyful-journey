@@ -31,6 +31,9 @@ import servicesConsultation from "@/assets/services-consultation.jpg";
 import aboutClinicPets from "@/assets/about-clinic-pets.jpg";
 import servicesVaccine from "@/assets/services-vaccine.jpg";
 import servicesLab from "@/assets/services-lab.jpg";
+import servicesCheckup from "@/assets/services-checkup.jpg";
+import servicesClinical from "@/assets/services-clinical.jpg";
+import servicesGuidance from "@/assets/services-guidance.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5500000000000";
 
@@ -47,9 +50,9 @@ const services = [
   { icon: Stethoscope, title: "Consultas Veterinárias", desc: "Atendimento completo e cuidadoso para a saúde do seu pet.", img: servicesConsultation },
   { icon: Syringe, title: "Vacinação", desc: "Protocolo vacinal atualizado para proteção total.", img: servicesVaccine },
   { icon: FlaskConical, title: "Exames Laboratoriais", desc: "Diagnósticos precisos com tecnologia de ponta.", img: servicesLab },
-  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro.", img: null },
-  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação.", img: null },
-  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal.", img: null },
+  { icon: ClipboardCheck, title: "Check-up Preventivo", desc: "Prevenção é o melhor cuidado para seu companheiro.", img: servicesCheckup },
+  { icon: HeartPulse, title: "Atendimento Clínico", desc: "Cuidados clínicos gerais com atenção e dedicação.", img: servicesClinical },
+  { icon: Sparkles, title: "Orientações de Saúde", desc: "Dicas e acompanhamento para o bem-estar animal.", img: servicesGuidance },
 ];
 
 const petShopItems = [
